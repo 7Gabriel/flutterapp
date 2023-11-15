@@ -7,14 +7,19 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.lightBlue,
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              color: Colors.green,
+          const Expanded(
+
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Doces'),
+                Text("By Cris")
+              ],
             ),
-            ),
+          ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.symmetric(
@@ -29,18 +34,84 @@ class SignInScreen extends StatelessWidget {
                   )
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
 
-                  CustomTextField(
+                  const CustomTextField(
                     icon: Icons.email,
                     label: "Email",
                   ),
 
-                  CustomTextField(
+                  const CustomTextField(
                     icon: Icons.password,
                     label: "Senha",
                     isSecret: true,
-                  )
+                  ),
+
+                  SizedBox(
+                    height: 50,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18)
+                        )
+                      ),
+                      onPressed: () {
+                      
+                    }, child: const Text("Entrar", 
+                          style: TextStyle(fontSize: 18, fontFamily: "Helvetica"),),),
+                  ),
+
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {
+                      
+                    }, child: const Text("Esqueci a senha", 
+                      style: TextStyle(color: Colors.red),
+                    )),
+                  ),
+                  
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: Colors.grey.withAlpha(90),
+                            thickness: 2,
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Text("ou"),
+                        ),
+                         Expanded(
+                          child: Divider(
+                            color: Colors.grey.withAlpha(90),
+                            thickness: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                SizedBox(
+                  height: 50,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18)
+                      ),
+                      side: const BorderSide(
+                        width: 2,
+                        color: Colors.lightBlue,
+                      )
+                    ),
+                    onPressed: () {}, 
+                    child: const Text("Criar conta")),
+                )
+
                 ],
               ),
               
