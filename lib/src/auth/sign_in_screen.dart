@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/auth/components/custom_text_field.dart';
 
@@ -10,13 +11,49 @@ class SignInScreen extends StatelessWidget {
       backgroundColor: Colors.lightBlue,
       body: Column(
         children: [
-          const Expanded(
+          Expanded(
 
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Doces'),
-                Text("By Cris")
+
+
+                const Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontSize: 40,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Doces",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "By Cris",
+                        style: TextStyle(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ]
+                  )
+                ),
+                 DefaultTextStyle(
+                  style: const TextStyle(
+                    fontSize: 25,
+                  ),
+                   child: AnimatedTextKit(
+                    repeatForever: true,
+                    animatedTexts: [
+                      TypewriterAnimatedText("Cupcakes"),
+                      WavyAnimatedText("Brownies"),
+                      TyperAnimatedText("Brigadeiros")
+                  
+                    ],
+                                 ),
+                 ),
               ],
             ),
           ),
